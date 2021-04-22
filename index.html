@@ -12,7 +12,8 @@
       <h1>Bingo</h1>
     </header>
     <main>
-      <div class="prepare-game">
+      <!-- prepare game section -->
+      <section class="prepare-game">
         <label
           >How many cards?
           <input
@@ -24,11 +25,20 @@
             max="3"
         /></label>
         <button id="lets-play">LETS PLAY!</button>
-      </div>
+      </section>
+      <!-- end of prepare game section -->
+      <!-- draw number section -->
       <section class="draw-number hide-section">
         <button id="draw-number-btn">Draw Number</button>
-        <h2 id="drawn-number">Draw number when you're ready!</h2>
+        <h2 id="drawn-number"></h2>
       </section>
+      <!-- end of draw number section -->
+      <!-- new game section -->
+      <section class="new-game hide-section">
+        <h2>Game Finished!</h2>
+        <button id="play-again-btn">Play again</button>
+      </section>
+      <!-- end of new game section -->
       <section class="game-board"></section>
       <section class="user-cards"></section>
     </main>
