@@ -56,10 +56,7 @@ const buildUserCards = (numberOfCards) => {
     const newCardDiv = document.createElement("div")
     newCardDiv.classList.add("user-card")
     for (let i = 0; i < userNumbers; i++) {
-      let randomNumber
-      do {
-        randomNumber = Math.floor(Math.random() * bingoNumbers) + 1
-      } while (userCells.includes(randomNumber))
+      const randomNumber = Math.floor(Math.random() * bingoNumbers) + 1
       userCells.push(randomNumber)
 
       // New card cell
@@ -67,21 +64,20 @@ const buildUserCards = (numberOfCards) => {
       newUserCell.classList.add("user-cell")
       newUserCell.innerText = randomNumber
 
+      // Append newyly created cell to card div
       newCardDiv.appendChild(newUserCell)
     }
-    console.log(userCells)
+    // console.log(userCells)
+    // Push newly created card array into global array of user cards
     userCards.push(userCells)
+
+    // Append newyly created card div to html section of user cards
     userCardsSection.appendChild(newCardDiv)
   }
-  console.log(userCards)
+  // console.log(userCards)
 }
 
 const drawNumber = () => {
-  markGameBoard()
-}
-drawNumberBtn.addEventListener("click", drawNumber)
-
-const markGameBoard = () => {
   let randomNumber
   do {
     randomNumber = Math.floor(Math.random() * bingoNumbers) + 1
@@ -89,8 +85,30 @@ const markGameBoard = () => {
 
   drawnNumbersGame.push(randomNumber)
   drawnNumber.innerText = randomNumber
+  markGameBoard(randomNumber)
+  markUserBoards(randomNumber)
+}
+drawNumberBtn.addEventListener("click", drawNumber)
+
+const markGameBoard = (number) => {
   const cells = document.querySelectorAll(".game-cell")
-  cells[randomNumber - 1].classList.add("drawn")
+  cells[number - 1].classList.add("drawn")
 }
 
-const markUserBoard = () => {}
+const markUserBoards = (number) => {
+  const allUserCells = document.querySelectorAll(".user-cell")
+  for (let i = 0; i < allUserCells.length; i++) {
+    if (parseInt(allUserCells[i].innerText) === number) {
+      allUserCells[i].classList.add("drawn")
+    }
+  }
+
+  // for (let i = 0; i < cardDivs.length; i++) {
+  //   const cells = cardDivs[i].children
+  //   for (let j = 0; j < cells.length; j++) {
+  //     if (parseInt(cells[j].innerText) === number) {
+  //       cells[j].classList.add("drawn")
+  //     }
+  //   }
+  // }
+}

@@ -41,7 +41,6 @@ USER BOARD
 .user-cards {
   display: flex;
 }
-
 .user-card {
   width: 30vw;
   display: grid;
@@ -54,6 +53,6 @@ USER BOARD
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  max-width: 40px;
-  height: 40px;
+  max-width: 30px;
+  height: 30px;
 }
