@@ -18,6 +18,7 @@ GAME BOARD
 */
 .game-board {
   width: 90vw;
+  max-width: 700px;
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   margin: 20px auto 40px;
@@ -41,12 +42,17 @@ USER BOARD
 */
 .user-cards {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .user-card {
   width: 30vw;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   margin: auto;
+  padding: 10px;
   gap: 5px;
 }
 .card-cell {
