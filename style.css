@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+.draw-number,
+header,
+.prepare-game {
+  display: grid;
+  place-items: center;
+}
+.hide-section {
+  display: none;
+}
+
+/*
+GAME BOARD
+*/
+.game-board {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  margin: 20px auto 40px;
+  gap: 5px;
+}
+
+.game-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  max-width: 40px;
+  height: 40px;
+}
+.drawn {
+  background-color: burlywood;
+}
+
+/*
+USER BOARD
+*/
+.user-cards {
+  display: flex;
+}
+
+.user-card {
+  width: 30vw;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: auto;
+  gap: 5px;
+}
+.user-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  max-width: 40px;
+  height: 40px;
+}

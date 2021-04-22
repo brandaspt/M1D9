@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Bingo</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bingo</h1>
+    </header>
+    <main>
+      <div class="prepare-game">
+        <label
+          >How many cards?
+          <input
+            type="number"
+            name="cards-number"
+            id="cards-number"
+            value="1"
+            min="1"
+            max="3"
+        /></label>
+        <button id="lets-play">LETS PLAY!</button>
+      </div>
+      <section class="draw-number hide-section">
+        <button id="draw-number-btn">Draw Number</button>
+        <h2 id="drawn-number">Draw number when you're ready!</h2>
+      </section>
+      <section class="game-board"></section>
+      <section class="user-cards"></section>
+    </main>
+    <footer></footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
